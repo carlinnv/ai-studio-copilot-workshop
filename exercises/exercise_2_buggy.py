@@ -14,6 +14,9 @@ a list of numbers, but it has a bug.
 
 
 def average(numbers):
+    if not numbers:
+        raise ValueError("average() arg is an empty sequence")
+
     total = 0
     for n in numbers:
         total += n
@@ -21,4 +24,4 @@ def average(numbers):
 
 
 print(average([1, 2, 3, 4, 5]))
-print(average([]))  # This line raises ZeroDivisionError.
+print(average([]))  # This line now raises a clear ValueError.
